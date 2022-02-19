@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My website</title>
+		<link rel="icon" type="image/jpg" href="{% static 'images/icon2.jpg' %}" sizes="16x16" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="card bg-dark responsive text-white">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-4 ">
+						<div class="card float-left bg-dark">
+						
+							
+							<div class="card-body">
+								<span ><h6>Hostel</h6></span>
+							</div>
+							
+						</div>	
+						<!--<div class="spinner-grow text-warning"></div>
+						
+						<div class="spinner-grow text-light"></div>
+						<div class="spinner-grow text-secondary"></div>
+						<div class="spinner-grow text-danger"></div>-->
+					</div>
+					<div class="col-4">
+					</div>
+					<div class="col-4 ">
+						<nav class="navbar navbar-expand-lg justify-content-center navbar-light bg-dark float-right text-white">
+							  
+							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							    <span class="navbar-toggler-icon"></span>
+							  </button>
+
+							  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+							    <ul class="navbar-nav mr-auto">
+							      <li class="nav-item active">
+							        <a class="nav-link text-white" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+							      </li>
+							      <li class="nav-item text-white">
+							        <a class="nav-link text-white" href="#about">About</a>
+							      </li>
+							      
+							      <li class="nav-item text-white">
+							        <a class="nav-link text-white" href="{% url 'abouttefin' %}" tabindex="-1" aria-disabled="true">About tefin</a>
+							      </li>
+							      <li class="nav-item text-white">
+							        <a class="nav-link text-white" href="{% url 'abouttenentroom' %}" tabindex="-1" aria-disabled="true">Detail about room</a>
+							      </li>
+							    </ul>
+							    
+							  </div>
+							</nav>
+					</div>	
+					
+				</div>		
+			</div>
+		</div>
+		<div class="container">
+			<div class="card-deck col-sm-4 text-center text-white" >
+				{% if tenant %}
+
+						  <table class="table table-dark">
+						    <thead>
+						      <tr>
+						        <th>ROOM NO</th>
+						        <th>HOSTEL NAME</th>
+						        <th>Owner NAME</th>
+						        <th>Owner contact</th>
+						        <th>Tenant contact</th>
+						        <th>Tenant name</th>
+						        <th>Paytm karo</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    	
+						    	{% for room in tenent %}	
+							      <tr>
+
+							        <td class="count"></td>
+							        <td>{{ room.hostel }}</td>
+							        <td>{{ room.avaliable }}</td>
+							      </tr>
+							    {% endfor %}  
+						      
+						    </tbody>
+						  </table>
+						{% endif %}  
+			        </div>
+
+		</div>	
+
+		<div id="demo" class="carousel slide" data-ride="carousel">
+
+  				<!-- Indicators -->
+			  <ul class="carousel-indicators">
+			    <li data-target="#demo" data-slide-to="0" class="active"></li>
+			    <li data-target="#demo" data-slide-to="1"></li>
+			    <li data-target="#demo" data-slide-to="2"></li>
+			     <li data-target="#demo" data-slide-to="3"></li>
+			    <li data-target="#demo" data-slide-to="4"></li>
+			    <li data-target="#demo" data-slide-to="5"></li>
+			     <li data-target="#demo" data-slide-to="6"></li>
+			    <li data-target="#demo" data-slide-to="7"></li>
+			    
+			  </ul>
+
+			  <!-- The slideshow -->
+			  <div class="carousel-inner text-white">
+			    <div class="carousel-item active">
+				   	 <div class="card" style="400px">
+
+				      <img src="{% static 'images/host1.png' %}" class="card-img-top" alt="Los Angeles" style="width:100%;">
+				      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				      </div>
+				  	</div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="{% static 'images/host2.png' %}" class="card-img-top" alt="Chicago" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				   </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="{% static 'images/host3.jpg' %}" class="card-img-top" alt="New York" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				  </div>
+			   </div>
+			   <div class="carousel-item">
+			      <img src="{% static 'images/host4.jpg' %}" class="card-img-top" alt="New York" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				  </div>
+			   </div>
+			   <div class="carousel-item">
+			      <img src="{% static 'images/host5.jpg' %}" class="card-img-top" alt="New York" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				  </div>
+			   </div>
+			   <div class="carousel-item">
+			      <img src="{% static 'images/host6.jpg' %}" class="card-img-top" alt="New York" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				  </div>
+			   </div>
+			   <div class="carousel-item">
+			      <img src="{% static 'images/host7.jpg' %}" class="card-img-top" alt="New York" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				  </div>
+			   </div>
+			   <div class="carousel-item">
+			      <img src="{% static 'images/host8.jpg' %}" class="card-img-top" alt="New York" style="width:100%;">
+			      <div class="card-img-overlay text-center text-white">
+				      	<h1 class="card-text">HOSTEL ROOM IMAGES</h1>
+				  </div>
+			   </div>
+  		</div>
+
+  <!-- Left and right controls -->
+		  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+		    <span class="carousel-control-prev-icon"></span>
+		  </a>
+		  <a class="carousel-control-next" href="#demo" data-slide="next">
+		    <span class="carousel-control-next-icon"></span>
+		  </a>
+
+	</div>
+
+
+	<nav class="navbar navbar-expand-xl bg-dark text-white" id="about">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link">
+					
+					<div id="demo" class="carousel slide" data-ride="carousel">
+
+  				<!-- Indicators -->
+					  <ul class="carousel-indicators">
+					    <li data-target="#demo" data-slide-to="0" class="active"></li>
+					    <li data-target="#demo" data-slide-to="1"></li>
+					    <li data-target="#demo" data-slide-to="2"></li>
+					    <li data-target="#demo" data-slide-to="3"></li>
+					    <li data-target="#demo" data-slide-to="4"></li>
+					   
+					  </ul>
+
+					  <!-- The slideshow -->
+					  <div class="carousel-inner" id="about">
+					    <div class="carousel-item active">
+						   	 <h3>Get the Best Hostel Here</h3>
+						   	 <h4>We are packed with our latest modules to provide the...</h4>
+
+
+
+
+					    </div>
+					    <div class="carousel-item">
+					    	<h3>We understand what problem you face during finding hostel</h3>
+						   	 <h4>we provide rooms and tefin</h4>
+					      
+					    </div>
+					    <div class="carousel-item">
+					      <h3>We Design webapplication for help people</h3>
+						   <h4>We are web developer</h4>
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>We are providing to add your hostel and tefin detail and you can also become Tenant</h3>
+					   		<h4>We are service provider</h4>
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>We improve our webapplication according your need</h3>
+					   		<h4>You can give your feedback</h4>
+					   </div>
+					   
+				</div>
+
+		  <!-- Left and right controls -->
+				  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+				    <span class="carousel-control-prev-icon"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#demo" data-slide="next">
+				    <span class="carousel-control-next-icon"></span>
+				  </a>
+
+			</div>
+				</a>
+			</li>	
+		</ul>	
+	</nav>	
+	<div class="row">
+		<h1 class="col-sm-12 text-center">&nbsp;</h1>
+	</div>
+	
+	<div class="row">
+		<h1 class="col-sm-12 text-center">OUR MODULES </h1>
+	</div>
+	<div class="row">
+		<h1 class="col-sm-12 text-center">&nbsp;</h1>
+	</div>
+	<div class="container">
+		<div class="card-deck col-xs-6">
+			<div class="card bg-dark">
+				<div class="card-body">
+				    <img src="{% static 'images/host1.png' %}" class="img-fluid " alt="...">
+				      	<a href="#" class="col-sm-12  text-center text-justify">Hostel Room</a>
+				</div>
+			</div>	
+		
+			<div class="card bg-dark">
+				<div class="card-body">
+				    <img src="{% static 'images/tifin6.png' %}" class="img-fluid " alt="...">
+				      	<a href="#" class="col-sm-12 text-center text-justify">Tifin</a>
+				</div>
+			</div>	
+		
+		
+			<div class="card bg-dark">
+				<div class="card-body">
+				    <img src="{% static 'images/hostbuil1.png' %}"  class="img-fluid" alt="...">
+				    <a href="{% url 'hostel' %}" class="col-sm-12 text-center text-justify">Hostel</a>
+				</div>
+			</div>
+		</div>	
+		
+	</div>	
+		<h1>&nbsp;</h1>
+		<h1>&nbsp;</h1>
+
+		<div class=" container responsive text-center ">
+			
+			<img src="{% static 'images/facebookpic.png' %}" class="img-fluid responsive" style="width:50px;height:50px;" />
+			<img src="{% static 'images/linkdinpic.png' %}" class="img-fluid responsive" style="width:50px;height:50px;" />
+			<img src="{% static 'images/whatspp.png' %}" class="img-fluid responsive" style="width:50px;height:50px;" />
+			<img src="{% static 'images/instrapic.png' %}" class="img-fluid responsive"  style="width:50px;height:50px;"/>
+			
+		</div>	
+		<h1>&nbsp;</h1>
+	
+
+	
+	
+
+	
+
+					
+					 
+	
+	
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+	</body>
+</html>

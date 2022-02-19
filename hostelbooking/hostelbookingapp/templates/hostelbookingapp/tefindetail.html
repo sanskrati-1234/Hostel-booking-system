@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My website</title>
+		<link rel="icon" type="image/jpg" href="{% static 'images/icon2.jpg' %}" sizes="16x16" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+		<style>
+			#mymap{
+				width: 100%;
+				height:600px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card bg-dark responsive text-white" >
+			<div class="card-body">
+				<div class="row">
+					<div class="col-4 ">
+						<div class="card float-left bg-dark">
+						
+							
+							<div class="card-body">
+								<span ><h6>Hostel</h6></span>
+							</div>
+							
+						</div>	
+						<!--<div class="spinner-grow text-warning"></div>
+						
+						<div class="spinner-grow text-light"></div>
+						<div class="spinner-grow text-secondary"></div>
+						<div class="spinner-grow text-danger"></div>-->
+					</div>
+					<div class="col-4">
+					
+						
+						
+					</div>
+					<div class="col-4  text-white">
+						<nav class="navbar navbar-expand-lg justify-content-center navbar-light bg-dark float-right">
+							  
+							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							    <span class="navbar-toggler-icon"></span>
+							  </button>
+
+							  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+							    <ul class="navbar-nav mr-auto">
+							      <li class="nav-item active">
+							        <a class="nav-link text-white" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+							      </li>
+							      <li class="nav-item">
+							        <a class="nav-link text-white" href="#about">About</a>
+							      </li>
+							      
+							      <li class="nav-item">
+							        <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Hostel</a>
+							      </li>
+							      <li class="nav-item">
+							        <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+							      </li>
+							    </ul>
+							    
+							  </div>
+							</nav>
+					</div>	
+					
+				</div>		
+			</div>
+		</div>
+		<h1>&nbsp;</h1>
+		<h1>&nbsp;</h1>
+		<div id="demo" class="carousel slide responsive" data-ride="carousel">
+
+  			
+			  <ul class="carousel-indicators">
+			    <li data-target="#demo" data-slide-to="0" class="active"></li>
+			    <li data-target="#demo" data-slide-to="1"></li>
+			    <li data-target="#demo" data-slide-to="2"></li>
+			    
+			    
+			  </ul>
+
+			  <!-- The slideshow -->
+			 
+				   	  <div class="row responsive">
+				   	 	{% for x in rooms %}
+
+						<div class="col-4 p-8 m-12">
+							<div class="card bg-dark p-8" style="width: 400px;height:600px;">
+								
+								<img src="../static/{{x.roomImg}}" class="img-fluid " alt="...">
+								<div class="card-body">
+									
+									<div class="card-text text-white">{{x.hostel.type}}</div>
+									<div class="card-text text-white">{{x.hostel.city}}</div>
+									<button type="button" class="btn btn-primary m-4">
+  											Contact: <span class="badge badge-light">{{x.hostel.contact}}</span>
+
+										</button>
+									<span>
+
+										<button type="button" class="btn btn-primary m-2">
+  											Price<span class="badge badge-light">{{x.hostel.price}}</span>
+
+										</button>
+										&nbsp;
+										{% if x.avaliable %}
+											<a type="button" class="btn btn-primary
+											ml-4 mr-4 mt-1"  href="{% url 'tenantPage' x.id%}" >Book</a>
+											&nbsp;&nbsp;
+										{% else %}
+											<button type="button" class="btn btn-primary Disabled ml-4 mr-4 mt-1">Filled</button>
+
+										{% endif %}
+										
+
+
+										
+								    </span>
+
+								</div>
+							</div>	
+						</div>
+						{% endfor %}
+						
+						
+					
+						</div>
+						
+					
+		<h1>&nbsp;</h1>
+  			<h1>&nbsp;</h1>
+			<nav class="navbar navbar-expand-xl bg-dark text-white" id="about">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link text-dark">INFORMATION ABOUT WEBAPPLICATION</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link">
+							
+							<div id="demo" class="carousel slide" data-ride="carousel">
+
+
+		
+
+
+
+
+
+  				<!-- Indicators -->
+					  <ul class="carousel-indicators ">
+					    <li data-target="#demo" data-slide-to="0" class="active"></li>
+					    <li data-target="#demo" data-slide-to="1"></li>
+					    <li data-target="#demo" data-slide-to="2"></li>
+					    <li data-target="#demo" data-slide-to="3"></li>
+					    <li data-target="#demo" data-slide-to="4"></li>
+					    <li data-target="#demo" data-slide-to="5"></li>
+					    <li data-target="#demo" data-slide-to="6"></li>
+					    <li data-target="#demo" data-slide-to="7"></li>
+					  </ul>
+
+					  <!-- The slideshow -->
+					  <div class="carousel-inner" id="about">
+					    <div class="carousel-item active">
+						   	 <h3>Get the Professional Training</h3>
+						   	 <h4>We are packed with our latest modules to provide the...</h4>
+
+
+
+
+					    </div>
+					    <div class="carousel-item">
+					    	<h3>We understand what you need to learn</h3>
+						   	 <h4>We understand what you need to learn</h4>
+					      
+					    </div>
+					    <div class="carousel-item">
+					      <h3>We are a team of Project Developers, Designers, Managers and...</h3>
+						   <h4>We are the project trainers</h4>
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>We are providing training, seminars, presentations, workshops and internship.</h3>
+					   		<h4>We are Boostup with our Last Year Success</h4>
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>Our last year assignments helped us to improve our sessions....</h3>
+					   		<h4>We are experienced in Corporate and College Training</h4>
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>Our distributed training courses and experienced trainers are delivering the...</h3>
+					   		<h4>Get the Professional Training</h4>
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>We are packed with our latest modules to provide the...</h3>
+					   		<h4>We understand what you need to learn</h4>
+
+					   </div>
+					   <div class="carousel-item">
+					   		<h3>We are a team of Project Developers, Designers, Managers and...</h3>
+					   </div>
+		  		</div>
+
+		  <!-- Left and right controls -->
+				  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+				    <span class="carousel-control-prev-icon"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#demo" data-slide="next">
+				    <span class="carousel-control-next-icon"></span>
+				  </a>
+
+			</div>
+				</a>
+			</li>	
+		</ul>	
+	</nav>	
+	
+
+	
+	<div class="row">
+		<h1 class="col-sm-12 text-center">&nbsp;</h1>
+	</div>
+	
+	<div class="row">
+		<h1 class="col-sm-12 text-center">OUR TRAINING MODULES </h1>
+	</div>
+	<div class="row">
+		<h1 class="col-sm-12 text-center">&nbsp;</h1>
+	</div>
+	<div class="container">
+		<div class="card-deck col-xs-6">
+			<div class="card bg-dark">
+				<div class="card-body">
+				    <img src="{% static 'images/host1.png' %}" class="img-fluid " alt="...">
+				      	<a href="#" class="col-sm-12  text-center text-justify text-white">Hostel Room</a>
+				</div>
+			</div>	
+		
+			<div class="card bg-dark">
+				<div class="card-body">
+				    <img src="{% static 'images/tifin6.png' %}" class="img-fluid " alt="...">
+				      	<a href="#" class="col-sm-12 text-center text-justify text-white">Tifin</a>
+				</div>
+			</div>	
+		
+		
+			<div class="card bg-dark">
+				<div class="card-body">
+				    <img src="{% static 'images/hostbuil1.png' %}"  class="img-fluid" alt="...">
+				    <a href="{% url 'hostel' %}" class="col-sm-12 text-center text-justify">Hostel</a>
+				</div>
+			</div>
+		</div>	
+		
+	</div>
+	
+		<h1>&nbsp;</h1>
+		<h1>&nbsp;</h1>
+
+		<div class=" container responsive text-center ">
+			
+			<img src="{% static 'images/facebookpic.png' %}" class="img-fluid responsive" style="width:50px;height:50px;" />
+			<img src="{% static 'images/linkdinpic.png' %}" class="img-fluid responsive" style="width:50px;height:50px;" />
+			<img src="{% static 'images/whatspp.png' %}" class="img-fluid responsive" style="width:50px;height:50px;" />
+			<img src="{% static 'images/instrapic.png' %}" class="img-fluid responsive"  style="width:50px;height:50px;"/>
+			
+		</div>	
+		<h1>&nbsp;</h1>
+	
+
+	
+	
+
+	
+
+					
+					 
+	
+	
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+	</body>
+</html>
